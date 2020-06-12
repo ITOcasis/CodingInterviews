@@ -1,3 +1,5 @@
+package algorithm;
+
 /**
  * @author Created by ChenJiaQiang on 2020/6/12 14:13
  * 牛客网，剑指offer，JZ38，二叉树的深度
