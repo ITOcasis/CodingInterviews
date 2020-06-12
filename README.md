@@ -1,5 +1,32 @@
-# 力扣刷题
-
-##### 文件命名规则：第几天题号题目，例如 algorithm.Day01JZ38TreeDepth
-##### 方法命名规则：题目你的昵称，例如 TreeDepthQC，就代表是你写的回答
-##### 上述可参考 algorithm.Day01JZ38TreeDepth.java
+# CodeInterviews 剑指Offer刷题记录
+## 一：玩法相关
+没啥讲究的，每天刷一道就完事儿。
+## 二：文件存放相关
+##### 文件统一存放在src下面，目录结构如下所示
+- algorithm(包)
+  - DayXX题目名(包)
+     - 刷题人1姓名(包)
+         -  题目名姓名缩写.java(类,public)
+         -  其它所需要的类.java(类,default)
+     - 刷题人2姓名(包)
+         -  题目名姓名缩写.java(类,public)
+         -  其它所需要的类.java(类,default)
+     - 刷题人n姓名(包)
+         -  题目名姓名缩写.java(类,public)
+         -  其它所需要的类.java(类,default)
+     - TestClass.java(用于测试的类)
+     - OtherClass.java(其它所需要的类)
+     - ReadMe.txt(题干信息)
+  - DayXX题目名(包)
+  - ...
+- ... 
+##### 例如：
+- algorithm(包)
+  - Day01JZ38TreeDepth(包)
+     - ozzyyang(包)
+         -  TreeDepthOY.java(类,public)
+     - qingchen(包)
+         -  TreeDepthQC.java(类,public)
+     - TestClass.java(用于测试的类)
+     - TreeNode.java(其它所需要的类)
+     - ReadMe.txt(题干信息)
