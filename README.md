@@ -1,4 +1,4 @@
-# CodeInterviews 剑指Offer刷题记录
+# CodingInterviews 剑指Offer刷题记录
 ## 一：玩法相关
 没啥讲究的，每天刷一道就完事儿。
 ## 二：文件存放相关
