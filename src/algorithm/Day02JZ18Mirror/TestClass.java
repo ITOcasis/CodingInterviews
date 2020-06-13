@@ -7,7 +7,10 @@ import algorithm.Day01JZ38TreeDepth.qingchen.TreeDepthQC;
 public class TestClass {
      /**
      * 初始化一棵树:{1,2,3,4,5,#,6,#,#,7}
-     *
+     *              1
+      *          2     3
+      *        4   5     6
+      *          7
      * @return
      */
     public static TreeNode init() {
