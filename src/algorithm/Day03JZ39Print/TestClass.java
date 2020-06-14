@@ -1,13 +1,13 @@
-package algorithm.Day02JZ18Mirror;
+package algorithm.Day03JZ39Print;
 
-import algorithm.Day02JZ18Mirror.*;
-import algorithm.Day02JZ18Mirror.ozzyyang.*;
-import algorithm.Day02JZ18Mirror.qingchen.*;
 
 public class TestClass {
-    /**
-     * 初始化一棵树:{1,2,3,4,5,#,6,#,#,7} 1 2 3 4 5 6 7
-     * 
+     /**
+     * 初始化一棵树:{1,2,3,4,5,#,6,#,#,7}
+     *              1
+      *          2     3
+      *        4   5     6
+      *          7
      * @return
      */
     public static TreeNode init() {
@@ -36,14 +36,9 @@ public class TestClass {
 
     public static void main(String[] args) {
         TreeNode root = TestClass.init();
-        TreeNode.inOrderTraversal(root);
+        TreeNode.visitBiTree(root);
         System.out.println();
 
-        MirrorOY.mirror(root);
-
-        TreeNode.preOrderTraversal(root);
-        // MirrorOY.mirror(root);
-        MirrorQC.Mirror(root);
-        TreeNode.preOrderTraversal(root);
+        TreeNode.visitBiTree(root);
     }
 }

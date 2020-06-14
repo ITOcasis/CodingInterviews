@@ -1,4 +1,4 @@
-package algorithm.Day02JZ18Mirror;
+package algorithm.Day03JZ39Print;
 
 public class TreeNode {
     public int val = 0;
@@ -22,32 +22,19 @@ public class TreeNode {
      * 
      * @param root 二叉树的根节点
      */
-    public static void preOrderTraversal(TreeNode root) {
+    public static void visitBiTree(TreeNode root) {
         if (root == null) {
             System.out.println("此树无节点！");
             return;
         }
 
-        System.out.print(root.toString() + " ");
+        System.out.print(root.toString()+" ");
         if (root.left != null) {
-            preOrderTraversal(root.left);
+            visitBiTree(root.left);
         }
 
         if (root.right != null) {
-            preOrderTraversal(root.right);
-        }
-    }
-
-    /**
-     * 中序遍历二叉树
-     * 
-     * @param root 二叉树的根节点
-     */
-    public static void inOrderTraversal(TreeNode root) {
-        if (root != null) {
-            inOrderTraversal(root.left);
-            System.out.print(root.toString() + " ");
-            inOrderTraversal(root.right);
+            visitBiTree(root.right);
         }
     }
 }
