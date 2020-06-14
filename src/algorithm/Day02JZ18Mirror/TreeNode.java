@@ -24,13 +24,14 @@ public class TreeNode {
      */
     public static void visitBiTree(TreeNode root) {
         if (root == null) {
-            System.out.print("");
+            System.out.print("此树无节点！");
             return;
         }
-        System.out.print(root.toString() + " ");
+
         if (root.left != null) {
             visitBiTree(root.left);
         }
+
         if (root.right != null) {
             visitBiTree(root.right);
         }
