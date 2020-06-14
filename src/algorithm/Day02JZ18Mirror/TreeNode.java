@@ -24,11 +24,11 @@ public class TreeNode {
      */
     public static void visitBiTree(TreeNode root) {
         if (root == null) {
-            System.out.print("此树无节点！");
+            System.out.println("此树无节点！");
             return;
         }
 
-        System.out.println(root.toString()+"");
+        System.out.print(root.toString()+" ");
         if (root.left != null) {
             visitBiTree(root.left);
         }
