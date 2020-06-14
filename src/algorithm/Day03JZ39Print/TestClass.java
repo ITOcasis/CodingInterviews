@@ -1,6 +1,8 @@
 package algorithm.Day03JZ39Print;
 
 
+import algorithm.Day03JZ39Print.qingchen.PrintQC;
+
 public class TestClass {
      /**
      * 初始化一棵树:{1,2,3,4,5,#,6,#,#,7}
@@ -38,7 +40,7 @@ public class TestClass {
         TreeNode root = TestClass.init();
         TreeNode.preOrderTraversal(root);
         System.out.println();
-
         TreeNode.preOrderTraversal(root);
+        System.out.println(PrintQC.Print(root));
     }
 }
