@@ -1,8 +1,8 @@
 package algorithm.Day02JZ18Mirror;
 
-import algorithm.Day01JZ38TreeDepth.TreeNode;
-import algorithm.Day01JZ38TreeDepth.ozzyyang.TreeDepthOY;
-import algorithm.Day01JZ38TreeDepth.qingchen.TreeDepthQC;
+import algorithm.Day02JZ18Mirror.*;
+import algorithm.Day02JZ18Mirror.ozzyyang.*;
+import algorithm.Day02JZ18Mirror.qingchen.*;
 
 public class TestClass {
      /**
@@ -38,8 +38,12 @@ public class TestClass {
     }
 
     public static void main(String[] args) {
-        TreeNode root = init();
-        System.out.println(TreeDepthQC.TreeDepth(root));
-        System.out.println(TreeDepthOY.TreeDepth(root));
+        TreeNode root = TestClass.init();
+        TreeNode.visitBiTree(root);
+        System.out.println();
+
+        MirrorOY.mirror(root);
+
+        TreeNode.visitBiTree(root);
     }
 }
