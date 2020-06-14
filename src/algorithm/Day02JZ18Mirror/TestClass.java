@@ -39,11 +39,11 @@ public class TestClass {
 
     public static void main(String[] args) {
         TreeNode root = TestClass.init();
-        TreeNode.visitBiTree(root);
+        TreeNode.inOrderTraversal(root);
         System.out.println();
 
         MirrorOY.mirror(root);
 
-        TreeNode.visitBiTree(root);
+        TreeNode.preOrderTraversal(root);
     }
 }
