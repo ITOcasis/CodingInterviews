@@ -50,4 +50,17 @@ public class TreeNode {
             inOrderTraversal(root.right);
         }
     }
+
+    /**
+     * 后序遍历二叉树
+     * 
+     * @param root 二叉树的根节点
+     */
+    public static void postOrderTraversal(TreeNode root) {
+        if (root != null) {
+            inOrderTraversal(root.left);
+            inOrderTraversal(root.right);
+            System.out.print(root.toString() + " ");
+        }
+    }
 }
