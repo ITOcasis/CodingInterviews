@@ -42,8 +42,8 @@ public class TestClass {
         TreeNode.visitBiTree(root);
         System.out.println();
 
-        MirrorOY.mirror(root);
-
+//        MirrorOY.mirror(root);
+        MirrorQC.Mirror(root);
         TreeNode.visitBiTree(root);
     }
 }
