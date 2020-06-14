@@ -28,6 +28,7 @@ public class TreeNode {
             return;
         }
 
+        System.out.println(root.toString()+"");
         if (root.left != null) {
             visitBiTree(root.left);
         }
