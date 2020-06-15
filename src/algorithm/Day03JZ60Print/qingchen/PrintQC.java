@@ -1,6 +1,6 @@
-package algorithm.Day03JZ39Print.qingchen;
+package algorithm.Day03JZ60Print.qingchen;
 
-import algorithm.Day03JZ39Print.TreeNode;
+import algorithm.Day03JZ60Print.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

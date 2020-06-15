@@ -1,4 +1,4 @@
-package algorithm.Day03JZ39Print;
+package algorithm.Day03JZ60Print;
 
 public class TreeNode {
     public int val = 0;

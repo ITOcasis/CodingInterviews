@@ -1,7 +1,7 @@
-package algorithm.Day03JZ39Print;
+package algorithm.Day03JZ60Print;
 
 
-import algorithm.Day03JZ39Print.qingchen.PrintQC;
+import algorithm.Day03JZ60Print.qingchen.PrintQC;
 
 public class TestClass {
      /**
