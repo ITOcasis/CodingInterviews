@@ -127,16 +127,42 @@ public class BinaryTree {
 
     /**
      * 后序遍历（非递归）
+     * 后序遍历在决定是否可以输出当前节点的值的时候，需要考虑其左右子树是否都已经遍历完成。
+     * 所以需要设置一个lastVisit游标。
+     * 若lastVisit等于当前考查节点的右子树，表示该节点的左右子树都已经遍历完成，则可以输出当前节点。
+     * 并把lastVisit节点设置成当前节点，将当前游标节点node设置为空，下一轮就可以访问栈顶元素。
+     * 否者，需要接着考虑右子树，node = node.right。
      * @param root
      */
     public static void postOrderNonRe(TreeNode root){
-
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        TreeNode lastVisit = root;
+        while (cur!=null||!stack.isEmpty()){
+            while (cur!=null){
+                stack.push(cur);
+                cur = cur.left;
+            }
+            // 查看栈顶元素
+            cur = stack.peek();
+            // 如果其右子树为空，或者右子树已经访问
+            // 则可以直接输出当前节点的值
+            if (cur.right==null||cur.right==lastVisit){
+                System.out.print(cur.val);
+                stack.pop();
+                lastVisit = cur;
+                cur = null;
+            }else {
+                // 继续遍历右子树
+                cur = cur.right;
+            }
+        }
     }
 
 
     public static void main(String[] args) {
-        inOrder(init());
+        postOrder(init());
         System.out.println();
-        inOrderNonRe(init());
+        postOrderNonRe(init());
     }
 }
