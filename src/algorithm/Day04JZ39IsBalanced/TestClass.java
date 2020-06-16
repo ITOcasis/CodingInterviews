@@ -1,6 +1,7 @@
 package algorithm.Day04JZ39IsBalanced;
 
 
+import algorithm.Day04JZ39IsBalanced.qingchen.IsBalancedQC;
 
 public class TestClass {
      /**
@@ -37,9 +38,9 @@ public class TestClass {
 
     public static void main(String[] args) {
         TreeNode root = TestClass.init();
-        TreeNode.preOrderTraversal(root);
+//        TreeNode.preOrderTraversal(root);
         System.out.println();
-        TreeNode.preOrderTraversal(root);
-
+//        TreeNode.preOrderTraversal(root);
+        System.out.println(IsBalancedQC.IsBalanced_Solution(root));
     }
 }
