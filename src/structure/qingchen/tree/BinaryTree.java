@@ -1,5 +1,7 @@
 package structure.qingchen.tree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -159,10 +161,34 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * 层次遍历
+     * @param root
+     */
+    public static void level(TreeNode root){
+        if (root==null)return;
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            //获取当前队列的长度，这个长度相当于 当前这一层的节点个数
+            int size = queue.size();
+            //将队列中的元素都拿出来(也就是获取这一层的节点)
+            //如果节点的左/右子树不为空，也放入队列中
+            for(int i=0;i<size;++i) {
+                TreeNode t = queue.remove();
+                System.out.print(t.val.toString());
+                if(t.left!=null) {
+                    queue.add(t.left);
+                }
+                if(t.right!=null) {
+                    queue.add(t.right);
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
-        postOrder(init());
-        System.out.println();
-        postOrderNonRe(init());
+        level(init());
     }
 }

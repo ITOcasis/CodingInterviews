@@ -1,7 +1,6 @@
 package algorithm.Day05JZ58IsSymmetrical;
 
-
-import algorithm.Day04JZ39IsBalanced.qingchen.IsBalancedQC;
+import algorithm.Day05JZ58IsSymmetrical.qingchen.IsSymmetricalQC;
 
 public class TestClass {
      /**
@@ -36,11 +35,22 @@ public class TestClass {
         return root;
     }
 
-    public static void main(String[] args) {
-        TreeNode root = TestClass.init();
-        TreeNode.preOrderTraversal(root);
-        System.out.println();
-        TreeNode.preOrderTraversal(root);
+    public static TreeNode init2() {
+        TreeNode root = new TreeNode(1);
+        TreeNode node1 = new TreeNode(2);
+        TreeNode node2 = new TreeNode(2);
+        root.left = node1;
+        root.right = node2;
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(3);
+        node1.right = node3;
+        node2.right = node3;
+        return root;
+    }
 
+
+    public static void main(String[] args) {
+        TreeNode root = TestClass.init2();
+        System.out.println(IsSymmetricalQC.isSymmetrical2(root));
     }
 }
