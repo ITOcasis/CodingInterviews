@@ -10,23 +10,24 @@ import algorithm.Day04JZ39IsBalanced.TreeNode;
 public class IsBalancedQC {
     /**
      * 我的思路：① 跟Day01的差不多，分别遍历左右子树，记录遍历的次数，再相减，判断是否大于1。
+     *
      * @param root
      * @return
      */
-    private static boolean isBalanced=true;
-
     public static boolean IsBalanced_Solution(TreeNode root) {
-        TreeDepth(root);
-        return isBalanced;
+        return TreeDepth(root) != -1;
     }
 
     public static int TreeDepth(TreeNode root) {
-        if(root == null)return 0;
+        if (root == null) return 0;
         int left = TreeDepth(root.left);
+        if (left == -1) return -1;
         int right = TreeDepth(root.right);
-        if (left-right>1 || left-right<(-1)){
-            isBalanced = false;
+        if (right == -1) return -1;
+        if (Math.abs(left - right) > 1) {
+            return -1;
+        } else {
+            return 1 + Math.max(left, right);
         }
-        return 1+Math.max(left,right);
     }
 }
