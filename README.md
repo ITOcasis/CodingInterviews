@@ -30,3 +30,9 @@
      - TestClass.java(用于测试的类)
      - TreeNode.java(其它所需要的类)
      - ReadMe.txt(题干信息)
+## 二：刷题日志
+- Day01：二叉树的深度：https://www.nowcoder.com/practice/435fb86331474282a3499955f0a41e8b
+- Day02：二叉树的镜像：https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011
+- Day03：把二叉树打印成多行：https://www.nowcoder.com/practice/445c44d982d04483b04a54f298796288
+- Day04：平衡二叉树：https://www.nowcoder.com/practice/8b3b95850edb4115918ecebdf1b4d222
+- Day05：对称的二叉树：https://www.nowcoder.com/practice/ff05d44dfdb04e1d83bdbdab320efbcb
