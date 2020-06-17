@@ -2,6 +2,7 @@ package structure.qingchen.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -28,17 +29,17 @@ public class BinaryTree {
      * @return
      */
     public static TreeNode init() {
-        TreeNode root = new TreeNode("A");
-        TreeNode node1 = new TreeNode("B");
-        TreeNode node2 = new TreeNode("C");
+        TreeNode root = new TreeNode(1);
+        TreeNode node1 = new TreeNode(2);
+        TreeNode node2 = new TreeNode(3);
         root.left = node1;
         root.right = node2;
-        TreeNode node3 = new TreeNode("D");
-        TreeNode node4 = new TreeNode("E");
+        TreeNode node3 = new TreeNode(4);
+        TreeNode node4 = new TreeNode(5);
         node1.left=node3;
         node1.right=node4;
-        TreeNode node5 = new TreeNode("F");
-        TreeNode node6 = new TreeNode("G");
+        TreeNode node5 = new TreeNode(6);
+        TreeNode node6 = new TreeNode(7);
         node2.left=node5;
         node2.right=node6;
         return root;
@@ -107,6 +108,26 @@ public class BinaryTree {
     }
 
     /**
+     * 前序遍历-第二种方法（非递归）
+     * @param root
+     */
+    public static void preOrderNonRe2(TreeNode root){
+        if (root==null)return;
+        // 因为遍历完中间节点之后，需要找到其左右节点，所以用一个栈进行暂存
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode temp = stack.pop();
+            if (temp!=null){
+                System.out.print(temp.val);
+                // 因为栈是先进后出，所以为了保证是前序遍历的顺序，先放入右节点
+                if (temp.right!=null)stack.push(temp.right);
+                if (temp.left!=null)stack.push(temp.left);
+            }
+        }
+    }
+
+    /**
      * 中序遍历（非递归）
      * 根先序遍历类似，只是等到弹出栈的时候，再打印。
      * @param root
@@ -124,6 +145,25 @@ public class BinaryTree {
                 System.out.print(cur.val);
                 cur = cur.right;
             }
+        }
+    }
+
+    /**
+     * 中序遍历-第二种方法（非递归）
+     * @param root
+     */
+    public static void inOrderNonRe2(TreeNode root){
+        if (root==null)return;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur!=null||!stack.isEmpty()){
+            while (cur!=null){
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            System.out.print(cur.val);
+            cur = cur.right;
         }
     }
 
@@ -162,6 +202,26 @@ public class BinaryTree {
     }
 
     /**
+     * 后序遍历-第二种方法（非递归）
+     * @param root
+     */
+    public static void postOrderNonRe2(TreeNode root){
+        if (root==null)return;
+        Stack<TreeNode> stack1 = new Stack<>();
+        Stack<TreeNode> stack2 = new Stack<>();
+        stack1.push(root);
+        while (!stack1.isEmpty()){
+            TreeNode temp = stack1.pop();
+            stack2.push(temp);
+            if (temp.left!=null)stack1.push(temp.left);
+            if (temp.right!=null)stack1.push(temp.right);
+        }
+        while (!stack2.isEmpty()){
+            System.out.print(stack2.pop().val);
+        }
+    }
+
+    /**
      * 层次遍历
      * @param root
      */
@@ -170,13 +230,32 @@ public class BinaryTree {
         LinkedList<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()){
+            TreeNode t = queue.remove();
+            System.out.print(t.val.toString());
+            if(t.left!=null) {
+                queue.add(t.left);
+            }
+            if(t.right!=null) {
+                queue.add(t.right);
+            }
+        }
+    }
+
+    public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        if (root==null)return list;
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
             //获取当前队列的长度，这个长度相当于 当前这一层的节点个数
             int size = queue.size();
+            List<Integer> temp = new ArrayList<>();
             //将队列中的元素都拿出来(也就是获取这一层的节点)
             //如果节点的左/右子树不为空，也放入队列中
             for(int i=0;i<size;++i) {
                 TreeNode t = queue.remove();
-                System.out.print(t.val.toString());
+                System.out.print(t.val);
+                temp.add((int)t.val);
                 if(t.left!=null) {
                     queue.add(t.left);
                 }
@@ -184,11 +263,14 @@ public class BinaryTree {
                     queue.add(t.right);
                 }
             }
+            list.add(temp);
         }
+        return list;
     }
-
 
     public static void main(String[] args) {
         level(init());
+        System.out.println();
+        System.out.println(levelOrder(init()).toString());
     }
 }
