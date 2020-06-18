@@ -36,3 +36,5 @@
 - Day03：把二叉树打印成多行：https://www.nowcoder.com/practice/445c44d982d04483b04a54f298796288
 - Day04：平衡二叉树：https://www.nowcoder.com/practice/8b3b95850edb4115918ecebdf1b4d222
 - Day05：对称的二叉树：https://www.nowcoder.com/practice/ff05d44dfdb04e1d83bdbdab320efbcb
+- Day06：从上往下打印二叉树：https://www.nowcoder.com/practice/7fe2212963db4790b57431d9ed259701
+- Day07：二叉树的下一个结点：https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e
