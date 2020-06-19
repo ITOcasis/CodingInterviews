@@ -1,7 +1,9 @@
 package algorithm.Day09JZ24FindPath;
 
 
-import algorithm.Day08JZ26Convert.qingchen.ConvertQC;
+import algorithm.Day09JZ24FindPath.qingchen.FindPathQC;
+
+import java.util.ArrayList;
 
 public class TestClass {
     /**
@@ -68,7 +70,31 @@ public class TestClass {
         return root;
     }
 
-    public static void main(String[] args) {
+    public static TreeNode init4(){
+        TreeNode root = new TreeNode(5);
+        TreeNode n1 = new TreeNode(4);
+        TreeNode n2 = new TreeNode(8);
+        root.left = n1;
+        root.right = n2;
+        TreeNode n3 = new TreeNode(11);
+        n1.left = n3;
+        TreeNode n4 = new TreeNode(7);
+        TreeNode n5 = new TreeNode(2);
+        n3.left =n4;
+        n3.right = n5;
+        TreeNode n6 = new TreeNode(13);
+        TreeNode n7 = new TreeNode(4);
+        n2.left = n6;
+        n2.right = n7;
+        TreeNode n8 = new TreeNode(5);
+        TreeNode n9 = new TreeNode(1);
+        n7.left = n8;
+        n7.right = n9;
+        return root;
+    }
 
+    public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> arrayLists = FindPathQC.FindPath(init4(), 22);
+        System.out.println(arrayLists.toString());
     }
 }
