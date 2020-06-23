@@ -2,6 +2,7 @@ package algorithm.Day12JZ23VerifySquenceOfBST;
 
 
 import algorithm.Day09JZ24FindPath.qingchen.FindPathQC;
+import algorithm.Day12JZ23VerifySquenceOfBST.qingchen.VerifySquenceOfBSTQC;
 
 import java.util.ArrayList;
 
@@ -94,6 +95,7 @@ public class TestClass {
     }
 
     public static void main(String[] args) {
-
+        int [] sequence = {10,12,11,18,29,24,13};
+        System.out.println(VerifySquenceOfBSTQC.VerifySequenceOfBST(sequence));
     }
 }
