@@ -38,3 +38,8 @@
 - Day05：对称的二叉树：https://www.nowcoder.com/practice/ff05d44dfdb04e1d83bdbdab320efbcb
 - Day06：从上往下打印二叉树：https://www.nowcoder.com/practice/7fe2212963db4790b57431d9ed259701
 - Day07：二叉树的下一个结点：https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e
+- Day08：二叉搜索树与双向链表：https://www.nowcoder.com/practice/947f6eb80d944a84850b0538bf0ec3a5
+- Day09：二叉树中和为某一值的路径：https://www.nowcoder.com/practice/b736e784e3e34731af99065031301bca
+- Day10：咕咕咕
+- Day11：咕咕咕
+- Day12：二叉搜索树的后序遍历序列：https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd
