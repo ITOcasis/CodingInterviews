@@ -3,6 +3,7 @@ package algorithm.Day09JZ24FindPath.qingchen;
 import algorithm.Day09JZ24FindPath.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -12,11 +13,11 @@ import java.util.Stack;
 public class FindPathQC {
 
     static ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-    static Stack<TreeNode> path = new Stack<>();
+    static LinkedList<Integer> path = new LinkedList<>();
 
     /**
      * 我的思路：没有思路......列举出从根结点到叶子结点的每一种路径？如何实现每条路径都计算了？
-     *
+     * 参考：https://leetcode-cn.com/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/solution/mian-shi-ti-34-er-cha-shu-zhong-he-wei-mou-yi-zh-5/
      * @param root
      * @param target
      * @return
@@ -28,20 +29,13 @@ public class FindPathQC {
 
     public static void preOrder(TreeNode node,int tar){
         if (node==null)return;
-        path.push(node);
+        path.add(node.val);
         tar = tar - node.val;
         if (node.left==null && node.right==null && tar == 0){
-            ArrayList<Integer> curPath = new ArrayList<>(path.size());
-            Stack<TreeNode> temp = path;
-            while (!temp.isEmpty()){
-                curPath.add(temp.pop().val);
-            }
-            res.add(curPath);
-        }else if (node.left==null && node.right==null && tar!=0){
-            TreeNode pop = path.pop();
-            tar += pop.val;
+            res.add(new ArrayList<>(path));
         }
         preOrder(node.left,tar);
         preOrder(node.right,tar);
+        path.removeLast();
     }
 }
