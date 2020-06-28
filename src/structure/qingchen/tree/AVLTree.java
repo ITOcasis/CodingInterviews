@@ -50,22 +50,46 @@ public class AVLTree {
      * 初始化一棵树
      *                    11
      *           4                 13
-     *     2         8                14
-     *   1   3     7   9
+     *     2         9          12     14
+     *   1   3     7   10                15
      * @return
      */
     public static TreeNode init(){
         TreeNode root = new TreeNode(11);
+        root.height = 0;
         TreeNode n1 = new  TreeNode(4);
+        n1.height = 0;
         TreeNode n2 = new TreeNode(13);
+        n2.height = -1;
         root.left = n1;
         root.right = n2;
         TreeNode n3 = new TreeNode(2);
-        TreeNode n4 = new TreeNode(8);
+        n3.height = 0;
+        TreeNode n4 = new TreeNode(9);
+        n4.height = 0;
         n1.left = n3;
         n1.right = n4;
         TreeNode n5 = new TreeNode(14);
+        n5.height = -1;
+        TreeNode n11 = new TreeNode(12);
+        n11.height = 0;
         n2.right = n5;
+        n2.left = n11;
+        TreeNode n6 = new TreeNode(1);
+        n6.height = 0;
+        TreeNode n7 = new TreeNode(3);
+        n7.height = 0;
+        n3.left = n6;
+        n3.right = n7;
+        TreeNode n8 = new TreeNode(7);
+        n8.height = 0;
+        TreeNode n9 = new TreeNode(10);
+        n9.height = 0;
+        n4.left = n8;
+        n4.right = n9;
+        TreeNode n10 = new TreeNode(15);
+        n10.height = 0;
+        n5.right = n10;
         return root;
     }
 
@@ -165,7 +189,7 @@ public class AVLTree {
      */
     private static void preOrder(TreeNode root){
         if (root==null)return;
-        System.out.print(root.val);
+        System.out.print(root.val + " ");
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -243,8 +267,8 @@ public class AVLTree {
     }
 
     public static void main(String[] args) {
-        TreeNode insert = insert(tree, 1);
-        preOrder(insert);
+        delete(tree,12);
+        preOrder(tree);
     }
 
 }
