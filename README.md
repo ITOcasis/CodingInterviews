@@ -43,3 +43,5 @@
 - Day10：咕咕咕
 - Day11：咕咕咕
 - Day12：二叉搜索树的后序遍历序列：https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd
+- 断了，重来
+- Day01: 从尾到头打印链表: https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/
