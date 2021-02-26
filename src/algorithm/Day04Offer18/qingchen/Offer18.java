@@ -64,9 +64,15 @@ public class Offer18 {
     }
 
     public static void main(String[] args) {
-        ListNode listNode = deleteNode2(init(), 1);
+        ListNode listNode = deleteNodeRe(init(), 1);
         System.out.println(listNode);
     }
+
+    public static ListNode deleteNodeRe(ListNode head, int val) {
+
+        return null;
+    }
+
 
     /**
      * 一开始的想法是
@@ -75,6 +81,7 @@ public class Offer18 {
      * 要删除之前的节点链表.next = 当前遍历的节点.next
      * 但是，遇到的问题是，新链表的指向总是出问题
      * 下面是错误的解题
+     *
      * @param head
      * @param val
      * @return
@@ -85,7 +92,7 @@ public class Offer18 {
         }
         ListNode res = new ListNode(head.val);
         while (head != null) {
-            if (head.val == val){
+            if (head.val == val) {
                 res.next = head.next;
             }
             res.next = head;
@@ -101,6 +108,7 @@ public class Offer18 {
      * 但我对这种方法不满意
      * 结果还是错的，实在不会了
      * 准备学习下网上的解答
+     *
      * @param head
      * @param val
      * @return
@@ -113,14 +121,14 @@ public class Offer18 {
         ListNode keepRes = null;
         head = head.next;
         while (head != null) {
-            if (head.val == val){
+            if (head.val == val) {
                 res.next = head.next;
                 break;
             }
             res.next = new ListNode(head.val);
-            if (keepRes == null){
+            if (keepRes == null) {
                 keepRes = res;
-            }else {
+            } else {
                 keepRes.next = res;
             }
             res = res.next;
@@ -134,20 +142,21 @@ public class Offer18 {
      * 没想到的是，竟然返回head
      * 说明我对java的引用这块还不理解
      * 去补补
+     *
      * @param head
      * @param val
      * @return
      */
     public static ListNode deleteNode2(ListNode head, int val) {
-        if(head.val == val) {
+        if (head.val == val) {
             return head.next;
         }
         ListNode pre = head, cur = head.next;
-        while(cur != null && cur.val != val) {
+        while (cur != null && cur.val != val) {
             pre = cur;
             cur = cur.next;
         }
-        if(cur != null) {
+        if (cur != null) {
             pre.next = cur.next;
         }
         return head;

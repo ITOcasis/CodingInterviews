@@ -1,5 +1,7 @@
 package algorithm.Day05Offer35.qingchen;
 
+import org.w3c.dom.Node;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,6 +52,12 @@ public class Offer35 {
     public static void main(String[] args) {
 
     }
+
+    private static Node copyRandomListRe(Node head) {
+
+        return null;
+    }
+
 
     /**
      * 题目都看不懂...
